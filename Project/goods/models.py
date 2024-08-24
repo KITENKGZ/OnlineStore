@@ -29,6 +29,7 @@ class Products(models.Model):
         db_table = 'product'
         verbose_name = '商品'
         verbose_name_plural = '商品'
+        ordering = ("id",)
     
     def __str__(self):
         return f'{self.name} 在庫は{self.quantity}'
