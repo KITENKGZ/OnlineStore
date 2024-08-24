@@ -8,10 +8,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BootstrapとカスタムCSSの読み込み -->
     <link rel="stylesheet" href="{% static "deps/css/bootstrap/bootstrap.min.css" %}">
     <link rel="stylesheet" href="{% static "deps/css/my_css.css" %}">
     <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
-    <!-- Favicons for different platforms -->
+    <!-- 各プラットフォーム用のファビコン -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static "deps/favicon/apple-touch-icon.png" %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static "deps/favicon/favicon-32x32.png" %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static "deps/favicon/favicon-16x16.png" %}">
@@ -21,9 +22,10 @@
 
 <body>
     <header>
+        <!-- ナビゲーションバーの定義 -->
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div class="container">
-                <a class="navbar-brand" href="{% url "main:index" %}">Home</a>
+                <a class="navbar-brand" href="{% url "main:index" %}">メインページ</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -31,53 +33,59 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown ">
+                        <!-- ドロップダウンメニュー -->
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Информация
+                                インフォメーション
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item  text-white" href="#">Доставка и оплата</a></li>
-                                <li><a class="dropdown-item  text-white" href="#">Контактная информация</a></li>
-                                <li><a class="dropdown-item  text-white" href="{% url "main:about" %}">Про нас</a></li>
+                                <li><a class="dropdown-item text-white" href="#">配送情報</a></li>
+                                <li><a class="dropdown-item text-white" href="#">連絡先</a></li>
+                                <li><a class="dropdown-item text-white" href="{% url "main:about" %}">会社概要</a></li>
                             </ul>
                         </li>
+                        <!-- ショッピングカートリンク -->
                         <li class="nav-item">
-                            <a class="nav-link  text-white" href="carts/cart.html">Корзина</a>
+                            <a class="nav-link text-white" href="carts/cart.html">カート</a>
                         </li>
+                        <!-- ログインリンク -->
                         <li class="nav-item">
-                            <a class="nav-link  text-white" href="users/login.html">Войти</a>
+                            <a class="nav-link text-white" href="users/login.html">ログイン</a>
                         </li>
-                        <li class="nav-item dropdown ">
+                        <!-- ドロップダウンメニュー -->
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Мой профиль
+                                プロファイル
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item  text-white" href="carts/cart.html">Корзина</a></li>
-                                <li><a class="dropdown-item  text-white" href="users/profile.html">Личный кабинет</a>
+                                <li><a class="dropdown-item text-white" href="carts/cart.html">カート</a></li>
+                                <li><a class="dropdown-item text-white" href="users/profile.html">プロファイル表示</a>
                                 </li>
-                                <li><a class="dropdown-item  text-white" href="{% url "admin:index" %}">Админ панель</a></li>
+                                <li><a class="dropdown-item text-white" href="{% url "admin:index" %}">管理画面</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item  text-white" href="#">Выйти</a></li>
+                                <li><a class="dropdown-item text-white" href="#">ログアウト</a></li>
                             </ul>
                         </li>
                     </ul>
+                    <!-- 検索フォーム -->
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success text-white" type="submit">Поиск</button>
+                        <button class="btn btn-outline-success text-white" type="submit">KENSAKU</button>
                     </form>
                 </div>
             </div>
         </nav>
     </header>
+
     <section>
         <div class="container">
-            <!-- Каталог и корзина с фиксированным расположением на странице -->
+            <!-- 固定されたカタログとカートボタン -->
             <div class="row mt-1 position-fixed z-3">
-                <!-- Каталог -->
+                <!-- カタログドロップダウン -->
                 <div class="dropdown mb-2">
                     <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -92,7 +100,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <!-- Значек корзины, вызывает модальное окно -->
+                <!-- カートボタン、モーダルウィンドウを表示 -->
                 <div>
                     <button type="button" class="btn btn-dark btn-secondary d-flex" id="modalButton"
                         aria-expanded="false">
@@ -101,7 +109,7 @@
                         <span id="goods-in-cart-count">0</span>
                     </button>
                 </div>
-                <!-- Разметка модального окна корзины -->
+                <!-- カートのモーダルウィンドウ -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable">
@@ -113,7 +121,7 @@
                             <div class="modal-body">
                                 <h3 class="text-center mb-4">Корзина</h3>
                                 <div class="container" id="cart-items-container">
-                                    <!-- Разметка корзины -->
+                                    <!-- カートの内容 -->
                                     <div class="card mb-3 text-bg-light shadow-lg">
                                         <div class="card-header">
                                             <h5 class="card-title">Товар</h5>
@@ -155,7 +163,7 @@
                                             <h4 class="float-left"><strong>100.00 $</strong></h4>
                                         </div>
                                     </div>
-                                    <!-- Закончилась разметка корзины -->
+                                    <!-- カートの内容終了 -->
                                 </div>
                                 <a class="btn btn-dark" href="orders/create_order.html">
                                     Оформить заказ
@@ -164,28 +172,30 @@
                         </div>
                     </div>
                 </div>
-                <!-- Закончилась разметка модального окна -->
+                <!-- モーダルウィンドウ終了 -->
             </div>
         </div>
-        <!-- Контент -->
+        <!-- ページコンテンツ -->
         <div class="container">
             <div class="row mt-1">
                 <div class="col-lg-2">
-                    <!-- Пустой блок на Ваше усмотрение -->
+                    <!-- 空のブロック、自由に使用可能 -->
                 </div>
                 <div class="col-lg-10">
-                    <!-- Контент на странице -->
+                    <!-- ページのコンテンツ -->
                     {% block content %}
                     {% endblock content %}
                 </div>
             </div>
         </div>
     </section>
+    <!-- フッター -->
     <footer class="py-4 bg-dark" style="position: sticky;">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; IMINOV KAMIL 2024</p>
         </div>
     </footer>
+    <!-- スクリプトの読み込み -->
     <script src="{% static "deps/js/jquery/jquery-3.7.0.min.js" %}"></script>
     <script src="{% static "deps/js/jquery-events.js" %}"></script>
     <script src="{% static "deps/js/jquery-ajax.js" %}"></script>

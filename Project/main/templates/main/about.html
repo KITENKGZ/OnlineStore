@@ -1,10 +1,12 @@
 {% extends "main/base.html" %}
 {% load static %}
 
-
 {% block content %}
+<!-- メインコンテンツブロック -->
 <div class="mt-5 pt-5 bg-white custom-shadow rounded">
+    <!-- コンテンツのタイトル -->
     <h2 class="m-2"><strong>{{ content }}</strong></h2>
+    <!-- ページ上のテキスト -->
     <p class="m-2">{{ text_on_page }}</p>
 </div>
-{% endblock  %}
+{% endblock %}
