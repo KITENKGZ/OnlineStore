@@ -51,5 +51,5 @@ class Products(models.Model):
     # 割引がある場合、割引後の価格を計算して返す、ない場合、そのままの価格を返すメソッド
     def sell_price(self):
         if self.discount:
-            return round(self.price - self.price*self.discount/100, 2)
+            return int(round(self.price - self.price*self.discount/100, 2))
         return self.price

@@ -45,13 +45,16 @@
         </form>
     </div>
 
-    <!-- 商品カードをループで表示 -->
+    <!-- 商品をループで表示 -->
+     {% if not goods %}
+     <h2>何も見つかっていません。</h2>
+     {% endif %}
     {% for product in goods %}
     <div class="col-lg-4 col-md-6 p-4">
         <div class="card border-primary rounded custom-shadow">
             <!-- 商品画像を表示。画像がない場合は代替画像を表示 -->
             {% if product.image %}
-                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.image.name }}">
+                <a href="{% url "catalog:product" product.slug %}"><img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.image.name }}"></a>
             {% else %}
                 <img src"{% static "deps/images/Not found image.png" %}" class="card-img-top">
             {% endif %}
@@ -62,7 +65,7 @@
                 </a>
                 <!-- 商品説明を25文字まで表示 -->
                 <p class="card-text">{{ product.description|truncatechars:25 }}</p>
-                <p class="product_id">{{ product.display_id }}</p>
+                <p class="product_id">id:{{ product.display_id }}</p>
                 <div class="d-flex justify-content-between">
                     <!-- 割引がある場合、元の価格と割引後の価格を表示 -->
                     {% if product.discount %}
@@ -85,6 +88,7 @@
 </div>
 
 <!-- ページネーション -->
+ {% if goods.has_previous or goods.has_next %}
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center my-4">
         <div class="custom-shadow d-flex">
@@ -115,4 +119,5 @@
         </div>
     </ul>
 </nav>
+{% endif %}
 {% endblock %}

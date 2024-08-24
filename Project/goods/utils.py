@@ -1,5 +1,5 @@
 from django.db.models import Q
-
+from django.contrib.postgres.search import SearchVector
 from goods.models import Products
 
 
@@ -7,6 +7,10 @@ def q_search(query):
     
     if query.isdigit() and len(query) <= 5:
         return Products.objects.filter(id=int(query))
+    
+    #return Products.objects.annotate(search=SearchVector('name', 'description', )).filter(search=query)
+    #日本語が対応していない
+    #Elasticsearchに変更が必要
     
     keywords = [word for word in query.split()]
 
