@@ -1,0 +1,310 @@
+[
+    {
+        "model": "goods.products",
+        "pk": 1,
+        "fields": {
+            "name": "サイドテーブル",
+            "slug": "side_table",
+            "description": "このサイドテーブルは、アールデコスタイルを完璧に表現しています。高級感のあるメタルとガラスの組み合わせが、どんな空間にも洗練された雰囲気をもたらします。",
+            "image": "",
+            "price": "12000",
+            "discount": "0",
+            "quantity": 11,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 2,
+        "fields": {
+            "name": "ウォールミラー",
+            "slug": null,
+            "description": "この壁掛けミラーは、美しい幾何学模様が特徴です。アールデコの特徴である大胆なデザインが、リビングルームやベッドルームをより魅力的にします。",
+            "image": "",
+            "price": "18500",
+            "discount": "0",
+            "quantity": 5,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 3,
+        "fields": {
+            "name": "ランプ",
+            "slug": "lamp",
+            "description": "このランプは、アールデコの時代のグラマーなエッセンスを取り入れています。真鍮のベースとエレガントなシェードが、空間に優雅さを加えます。",
+            "image": "",
+            "price": "9800",
+            "discount": "0",
+            "quantity": 3,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 4,
+        "fields": {
+            "name": "キャビネット",
+            "slug": "cabinet",
+            "description": "このキャビネットは、洗練されたデザインと実用性を兼ね備えています。アールデコの影響を受けた細部の彫刻が目を引く一品です。",
+            "image": "",
+            "price": "25000",
+            "discount": "0",
+            "quantity": 199,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 5,
+        "fields": {
+            "name": "モダン・フラワーベース",
+            "slug": "modern_flower_vase",
+            "description": "このモダンなフラワーベースは、シンプルでありながらエレガントなデザインが特徴です。どんなインテリアにもぴったりです。",
+            "image": "",
+            "price": "2500",
+            "discount": "0",
+            "quantity": 2,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 6,
+        "fields": {
+            "name": "デコラティブ・クッション",
+            "slug": "decorative_cushion",
+            "description": "このクッションは、リビングやベッドルームにアクセントを加えるのに最適です。柔らかな素材と美しいデザインが特徴です。",
+            "image": "",
+            "price": "3200",
+            "discount": "0",
+            "quantity": 14,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 7,
+        "fields": {
+            "name": "ウォールアート・セット",
+            "slug": "wallart_set",
+            "description": "このウォールアートセットは、モダンでスタイリッシュなデザインが特徴です。リビングルームやオフィスに最適です。",
+            "image": "",
+            "price": "7800",
+            "discount": "0",
+            "quantity": 0,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 8,
+        "fields": {
+            "name": "ウッドトレイ",
+            "slug": "wood_tray",
+            "description": "このウッドトレイは、ナチュラルな木材で作られており、どんなテーブルにもマッチします。シンプルで実用的なデザインです。",
+            "image": "",
+            "price": "1800",
+            "discount": "0",
+            "quantity": 13,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 9,
+        "fields": {
+            "name": "エルゴノミック・オフィスチェア",
+            "slug": "ergonomic_office_chair",
+            "description": "長時間の作業をサポートするエルゴノミックデザインのオフィスチェアです。快適さとスタイルを兼ね備えた一品です。",
+            "image": "",
+            "price": "15000",
+            "discount": "0",
+            "quantity": 12,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 10,
+        "fields": {
+            "name": "モダン・デスク",
+            "slug": "modern_desk",
+            "description": "このモダンなデスクは、シンプルでスタイリッシュなデザインが特徴です。オフィスや自宅のワークスペースに最適です。",
+            "image": "",
+            "price": "20000",
+            "discount": "0",
+            "quantity": 0,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 11,
+        "fields": {
+            "name": "オフィス・ブックシェルフ",
+            "slug": "office_bookshelf",
+            "description": "このブックシェルフは、収納力とデザイン性を兼ね備えたアイテムです。オフィスに整理整頓をもたらします。",
+            "image": "",
+            "price": "12500",
+            "discount": "0",
+            "quantity": 25,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 12,
+        "fields": {
+            "name": "オフィス・デスクランプ",
+            "slug": "office_desk_lamp",
+            "description": "スタイリッシュで実用的なデスクランプは、作業環境をより明るく、快適にします。LEDライトで省エネ設計。",
+            "image": "",
+            "price": "5800",
+            "discount": "0",
+            "quantity": 13,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 13,
+        "fields": {
+            "name": "モダン・ソファ",
+            "slug": "modern_sofa",
+            "description": "このモダンなソファは、快適さとスタイルを兼ね備えた一品です。リビングルームをより魅力的にします。",
+            "image": "",
+            "price": "35000",
+            "discount": "0",
+            "quantity": 2,
+            "category": 5
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 14,
+        "fields": {
+            "name": "ガラス・コーヒーテーブル",
+            "slug": "glass_coffee_table",
+            "description": "このガラス製コーヒーテーブルは、シンプルでありながらエレガントなデザインが特徴です。リビングルームに洗練された雰囲気を加えます。",
+            "image": "",
+            "price": "14000",
+            "discount": "0",
+            "quantity": 3,
+            "category": 5
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 15,
+        "fields": {
+            "name": "ウォール・シェルフセット",
+            "slug": "wall_shelf_set",
+            "description": "このシェルフセットは、リビングルームのデコレーションと収納に最適です。モダンでスタイリッシュなデザイン。",
+            "image": "",
+            "price": "8000",
+            "discount": "0",
+            "quantity": 4,
+            "category": 5
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 16,
+        "fields": {
+            "name": "リクライニング・アームチェア",
+            "slug": "reclining_armchair",
+            "description": "このリクライニングアームチェアは、リビングルームでのリラックスタイムを快適にします。エレガントなデザインと快適さが特徴です。",
+            "image": "",
+            "price": "22000",
+            "discount": "0",
+            "quantity": 228,
+            "category": 5
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 17,
+        "fields": {
+            "name": "クイーンサイズ・ベッドフレーム",
+            "slug": "queensize_bedframe",
+            "description": "このベッドフレームは、モダンでスタイリッシュなデザインが特徴です。快適でリラックスできる寝室を作り出します。",
+            "image": "",
+            "price": "28000",
+            "discount": "0",
+            "quantity": 2,
+            "category": 4
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 18,
+        "fields": {
+            "name": "ナイトスタンド・セット",
+            "slug": "nightstand_set",
+            "description": "このナイトスタンドセットは、ベッドサイドに実用性とスタイルを加えます。収納力とデザイン性が魅力です。",
+            "image": "",
+            "price": "9800",
+            "discount": "0",
+            "quantity": 3,
+            "category": 4
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 19,
+        "fields": {
+            "name": "ドレッサー・ミラーユニット",
+            "slug": "dresser_mirror_unit",
+            "description": "このドレッサーユニットは、寝室にエレガンスをもたらします。広々とした収納スペースと大きな鏡が特徴です。",
+            "image": "",
+            "price": "18000",
+            "discount": "0",
+            "quantity": 19,
+            "category": 4
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 20,
+        "fields": {
+            "name": "ベッドルーム・ラグ",
+            "slug": "bedroom_rug",
+            "description": "柔らかく快適なこのラグは、ベッドルームに温かさとスタイルを加えます。さまざまな色とサイズが揃っています。",
+            "image": "",
+            "price": "7200",
+            "discount": "0",
+            "quantity": 29,
+            "category": 4
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 21,
+        "fields": {
+            "name": "キッチン・アイランドカート",
+            "slug": "kitchen_islandcart",
+            "description": "このキッチンカートは、追加の作業スペースと収納を提供します。モバイルデザインで、どんなキッチンにもぴったりです。",
+            "image": "",
+            "price": "19800",
+            "discount": "0",
+            "quantity": 3,
+            "category": 3
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 22,
+        "fields": {
+            "name": "ステンレス・クックウェアセット",
+            "slug": "stainless_cookware_set",
+            "description": "このクックウェアセットは、すべての料理愛好家にとって必須です。耐久性があり、スタイリッシュなデザインが特徴です。",
+            "image": "",
+            "price": "12500",
+            "discount": "0",
+            "quantity": 2,
+            "category": 3
+        }
+    }
+]
