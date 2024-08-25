@@ -51,7 +51,7 @@
                         </li>
                         <!-- ログインリンク -->
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="users/login.html">ログイン</a>
+                            <a class="nav-link text-white" href="{% url "user:login" %}">ログイン</a>
                         </li>
                         <!-- ドロップダウンメニュー -->
                         <li class="nav-item dropdown">
@@ -61,13 +61,13 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item text-white" href="carts/cart.html">カート</a></li>
-                                <li><a class="dropdown-item text-white" href="users/profile.html">プロファイル表示</a>
+                                <li><a class="dropdown-item text-white" href="{% url "user:profile" %}">プロファイル表示</a>
                                 </li>
                                 <li><a class="dropdown-item text-white" href="{% url "admin:index" %}">管理画面</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item text-white" href="#">ログアウト</a></li>
+                                <li><a class="dropdown-item text-white" href="{% url "user:logout" %}">ログアウト</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -190,7 +190,8 @@
         </div>
     </section>
     <!-- フッター -->
-    <footer class="py-4 bg-dark" style="position: sticky;">
+    <div class="clear" style='clear: both; height: 60px;'></div>
+    <footer class="py-4 bg-dark" style="z-index: 1000;">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; IMINOV KAMIL 2024</p>
         </div>
