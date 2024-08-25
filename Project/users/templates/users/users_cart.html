@@ -2,21 +2,21 @@
 {% load static %}
 {% load carts_tags %}
 
-
 {% block content %}
 {% user_carts request as carts %}
     <div class="row">
         <div class="container mt-5">
             <div class="row justify-content-center">
-                <div class=" bg-white p-4 mb-4 mx-2 rounded custom-shadow">
+                <div class="bg-white p-4 mb-4 mx-2 rounded custom-shadow">
                     <h3 class="text-center mb-4">カート</h3>
                     <div class="container" id="cart-items-container">
-                        <!-- Разметка корзины -->
+                        <!-- カートの内容を表示 -->
                         {% include "cart.html" %}
-                        <!-- Закончилась разметка корзины -->
+                        <!-- カートの内容表示終了 -->
                     </div>
                     {% if carts %}
-                    <a class="btn btn-dark" href="../orders/create_order.html">
+                    <!-- 注文確認ボタン -->
+                    <a class="btn btn-dark" href="#">
                         注文確認
                     </a>
                     {% endif %}
@@ -24,4 +24,4 @@
             </div>
         </div>
     </div>
-{% endblock  %}
+{% endblock %}

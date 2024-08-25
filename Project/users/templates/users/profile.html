@@ -6,29 +6,33 @@
     <div class="row">
         <div class="container mt-5">
             <div class="row">
-                <!-- Профиль с данными пользователя -->
+                <!-- ユーザープロファイルを表示するセクション -->
                 <div class="col-md-5">
-                    <div class=" bg-white p-4 mb-4 mx-2 rounded custom-shadow">
+                    <div class="bg-white p-4 mb-4 mx-2 rounded custom-shadow">
                         <h3 class="text-center mb-4">ユーザープロファイル</h3>
                         <form action="{% url "user:profile" %}" method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-12 mb-3 text-center">
                                     {% if user.image %}
+                                        <!-- プロファイル画像がある場合は表示 -->
                                         <img src="{{ user.image.url }}"
                                                 alt="プロファイル画像" class="img-fluid rounded-circle"
                                                 style="max-width: 150px;">
                                     {% else %}
+                                        <!-- プロファイル画像がない場合はデフォルトの画像を表示 -->
                                         <img src="{% static "deps/images/baseavatar.jpg" %}"
                                             alt="プロファイル画像" class="img-fluid rounded-circle"
                                             style="max-width: 150px;">
-                                    {% endif %}                                  
+                                    {% endif %}
+                                    <!-- プロファイル画像のアップロード -->
                                     <input type="file" class="form-control mt-3" id="id_image" name="image"
                                         accept="image/*">
                                     {% if form.image.errors %}
                                         <div class="alert alert-danger alert-dismissible fade show">{{ form.image.errors }}</div>
                                     {% endif %}
                                 </div>
+                                <!-- 各種フィールドの入力フォーム -->
                                 <div class="col-md-12 mb-3">
                                     <label for="id_first_name" class="form-label">ファーストネーム*</label>
                                     <input type="text" class="form-control" id="id_first_name"
@@ -71,28 +75,27 @@
                         </form>
                     </div>
                 </div>
-                <!-- Корзина -->
+                <!-- ユーザーのカートを表示するセクション -->
                 <div class="col-md-7">
                     {% user_carts request as carts %}
-                    <div class=" bg-white p-4 mb-4 mx-2 rounded custom-shadow">
+                    <div class="bg-white p-4 mb-4 mx-2 rounded custom-shadow">
                         <h3 class="text-center mb-4">カート</h3>
                         <div class="container" id="cart-items-container">
-                            <!-- Разметка корзины -->
+                            <!-- カートの内容を表示する -->
                             {% include "cart.html" %}
-                            <!-- Закончилась разметка корзины -->
                         </div>
                         {% if carts %}
-                        <a class="btn btn-dark" href="../orders/create_order.html">
+                        <a class="btn btn-dark" href="#">
                             注文確認
                         </a>
                         {% endif %}
                     </div>
                 </div>
-                <!-- Оформленные заказы -->
-                <div class="col-md-12">
-                    <div class=" bg-white p-4 mb-4 mx-2 rounded custom-shadow">
+                <!-- ユーザーの注文履歴を表示するセクション -->
+                {% comment %} <div class="col-md-12">
+                    <div class="bg-white p-4 mb-4 mx-2 rounded custom-shadow">
                         <h3 class="text-center mb-4">Мои заказы</h3>
-                        <!-- Разметка заказов -->
+                        <!-- 注文履歴をアコーディオンで表示 -->
                         <div class="container">
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
@@ -118,14 +121,12 @@
                                                         <td>1</td>
                                                         <td>255.00 $</td>
                                                         <td>255.00 $</td>
-                                                        
                                                     </tr>
                                                 </tbody>
                                             </table>
                                             <div class="d-flex justify-content-between">
                                                 <p><strong>Итого:</strong></p>
                                                 <p><strong>255.00 $</strong></p>
-
                                             </div>
                                         </div>
                                     </div>
@@ -153,7 +154,6 @@
                                                         <td>2</td>
                                                         <td>30.00 $</td>
                                                         <td>60.00 $</td>
-                                                        
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -162,10 +162,10 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Закончилась разметка заказов -->
+                        <!-- 注文履歴のセクション終了 -->
                     </div>
-                </div>
+                </div> {% endcomment %}
             </div>
         </div>
     </div>
-{% endblock  %}
+{% endblock %}

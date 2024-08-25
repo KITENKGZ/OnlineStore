@@ -3,10 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.urls import reverse
-from traitlets import Instance
-
 from users.forms import ProfileForm, UserLoginForm, UserRegisterForm
 
+# ログイン機能を提供するビュー
 def login(request):
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
@@ -18,11 +17,10 @@ def login(request):
                 auth.login(request, user)
                 messages.success(request, f"{username}様、ログイン成功")
 
+                # ログイン後にリダイレクト
                 if request.POST.get('next', None):
                     return HttpResponseRedirect(request.POST.get('next'))
                 return HttpResponseRedirect(reverse('main:index'))
-
-
     else:
         form = UserLoginForm()
 
@@ -32,6 +30,7 @@ def login(request):
     }
     return render(request, 'users/login.html', context)
 
+# ユーザー登録機能を提供するビュー
 def registration(request):
     if request.method == 'POST':
         form = UserRegisterForm(data=request.POST)
@@ -41,7 +40,6 @@ def registration(request):
             auth.login(request, user)
             messages.success(request, f"{user.username}様、新規登録成功")
             return HttpResponseRedirect(reverse('main:index'))
-
     else:
         form = UserRegisterForm()
 
@@ -51,6 +49,7 @@ def registration(request):
     }
     return render(request, 'users/registration.html', context)
 
+# プロファイル管理機能を提供するビュー（ログインが必要）
 @login_required
 def profile(request):
     if request.method == 'POST':
@@ -59,7 +58,6 @@ def profile(request):
             form.save()
             messages.success(request, "保存成功")
             return HttpResponseRedirect(reverse('user:profile'))
-
     else:
         form = ProfileForm(instance=request.user)
     
@@ -69,12 +67,11 @@ def profile(request):
     }
     return render(request, 'users/profile.html', context)
 
-
+# ユーザーのカートページを表示するビュー
 def users_cart(request):
     return render(request, 'users/users_cart.html')
 
-
-
+# ログアウト機能を提供するビュー（ログインが必要）
 @login_required
 def logout(request):
     messages.success(request, "ログアウト成功")

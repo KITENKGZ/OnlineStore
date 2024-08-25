@@ -1,11 +1,14 @@
 {% load static %}
 
+<!-- フォーム全体に関するエラーが存在する場合 -->
 {% if form.non_field_errors %}
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-6">
+                <!-- エラーメッセージの表示 -->
                 <div class="alert alert-danger alert-dismissible fade show custom-shadow" role="alert">
                     {{ form.non_field_errors }}
+                    <!-- 閉じるボタン -->
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
@@ -19,17 +22,20 @@
             {% if messages %}
                 {% for message in messages %}
                     {% if message.tags == 'success' %}
+                    <!-- 成功メッセージの表示 -->
                     <div id="notification" class="position-fixed start-50 translate-middle-x z-3 alert alert-success fade show custom-shadow" role="alert">
                         {{ message }}
                     </div>
                     {% endif %}
                     {% if message.tags == 'warning' %}
+                    <!-- 警告メッセージの表示 -->
                     <div id="notification" class="position-fixed start-50 translate-middle-x z-3 alert alert-danger fade show custom-shadow" role="alert">
                         {{ message }}
                     </div>
                     {% endif %}
                 {% endfor %}
             {% else %}
+            <!-- jQueryによる動的な通知用の要素 -->
             <div id="jq-notification" class="position-fixed start-50 translate-middle-x z-3 alert alert-success fade show custom-shadow" style="display: none;" role="alert">
             </div>
             {% endif %}

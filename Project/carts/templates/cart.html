@@ -1,11 +1,10 @@
 {% load static %}
 
-
-
+{% if user.is_authenticated %}
 <div class="card mb-3 text-bg-light shadow-lg">
     {% for cart in carts %}
         <div class="card-header">
-            <h5 class="card-title">{{ card.product.name }}</h5>
+            <h5 class="card-title">{{ cart.product.name }}</h5> <!-- 'card.product.name' должно быть 'cart.product.name' -->
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -29,9 +28,9 @@
                         </div>
                     </div>
                     <div class="col p-0">
-                        <p>{{ cart.product.sell_price }}円 = </p>
+                        <p>{{ cart.product.sell_price }}円 = </p> <!-- 商品の単価を表示 -->
                     </div>
-                    <div class="col p-0"><strong>{{ cart.products_price }}円</strong></div>
+                    <div class="col p-0"><strong>{{ cart.products_price }}円</strong></div> <!-- 合計価格を表示 -->
                     <div class="col p-0">
                         <a href="{% url "cart:cart_remove"%}" class="remove-from-cart" data-cart-id="{{ cart.id }}">
                             {% csrf_token %}
@@ -46,7 +45,11 @@
 </div>
 <div class="card mb-3 shadow-lg">
     <div class="card-footer">
-        <p class="float-left">全部で <strong>{{ carts.total_quantity }}</strong>つの商品です。合計金額は以下になります。</p>
-        <h4 class="float-left"><strong>{{ carts.total_price }}円</strong></h4>
+        <p class="float-left">全部で <strong>{{ carts.total_quantity }}</strong>つの商品です。合計金額は以下になります。</p> <!-- 合計数量 -->
+        <h4 class="float-left"><strong>{{ carts.total_price }}円</strong></h4> <!-- 合計価格 -->
     </div>
 </div>
+{% else %}
+<h5>カートに追加するにはログインが必要です。</h5>
+<p>ログイン又は新規登録してください。</p>
+{% endif %}
