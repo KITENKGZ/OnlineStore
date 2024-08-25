@@ -17,6 +17,9 @@ def login(request):
             if user:
                 auth.login(request, user)
                 messages.success(request, f"{username}様、ログイン成功")
+
+                if request.POST.get('next', None):
+                    return HttpResponseRedirect(request.POST.get('next'))
                 return HttpResponseRedirect(reverse('main:index'))
 
 
