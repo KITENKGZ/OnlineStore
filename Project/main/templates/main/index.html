@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block modal_cart %}
+{% include "cart_button.html" %}
+{% endblock  %}
+
 {% block content %}
 <!-- ページのメインコンテンツブロック -->
 <h1 class="mt-5 pt-5"><strong>{{ content }}</strong></h1>
